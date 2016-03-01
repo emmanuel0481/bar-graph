@@ -3,9 +3,27 @@ package bar.graph;
 public class BarGraph {
 
     public static void main(String[] args) {
-        Item red = new ColorRGB(ColorRGB.ColorName.RED, 100);
         
-        System.out.println("Color = " + red);
+        final GraphModel model = new GraphModel();
+        
+        //create items
+        GraphItem[] items = {
+            new RGBItem(RGBItem.ColorName.RED, 0),
+            new RGBItem(RGBItem.ColorName.GREEN, 0),
+            new RGBItem(RGBItem.ColorName.BLUE, 0),
+        };
+        
+        //add items to the model
+        for(GraphItem item : items){
+            model.addItem(item);
+        }
+        
+        //create bar view
+        BarViewFrame barView = new BarViewFrame(model);
+        
+        //create number view
+        NumberViewFrame numberView = new NumberViewFrame(model);
+
     }
     
 }
