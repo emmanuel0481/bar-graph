@@ -1,5 +1,5 @@
 # bar-graph
-Java swing application with one frame containing number fields, and another frame containing their bar graph representation. 
+Java swing application for bar graphs. One frame containing number fields, and another frame containing their bar graph representation. 
 The Observer pattern is being implemented here.
 
 - Entering a number on the number fields updates the graph
