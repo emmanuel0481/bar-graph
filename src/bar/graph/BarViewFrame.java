@@ -36,8 +36,10 @@ public class BarViewFrame extends JFrame{
                     public void mouseClicked(MouseEvent me) {}
 
                     @Override
-                    public void mousePressed(MouseEvent me) {
-                        System.out.println(me.getY());
+                    public void mousePressed(MouseEvent me) {    
+                        int value = (barIcon.getIconHeight() - me.getY()) * item.getMaxValue() / barIcon.getIconHeight();
+                        item.setValue(value);
+                        model.updated();
                     }
 
                     @Override

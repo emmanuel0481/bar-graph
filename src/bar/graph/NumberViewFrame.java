@@ -8,6 +8,8 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
 
 
 public class NumberViewFrame extends JFrame{
@@ -43,6 +45,16 @@ public class NumberViewFrame extends JFrame{
             numberPanel.add(numberLabel);
             numberPanel.add(numberField);
             add(numberPanel);
+            
+            ChangeListener listener = new
+                ChangeListener(){
+
+                    @Override
+                    public void stateChanged(ChangeEvent e) {
+                        numberField.setText(String.valueOf(item.getValue()));
+                    }    
+                };
+            model.addChangeListener(listener);
         }
         
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

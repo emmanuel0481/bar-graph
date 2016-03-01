@@ -41,7 +41,8 @@ public class BarIcon implements Icon{
         this.barValue = barValue;
         calculateBarHeight();
     }
-    
+ 
+   
     private void calculateBarHeight(){
         barHeight = barValue * iconHeight / barMaxValue;
     }
