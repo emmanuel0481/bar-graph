@@ -5,7 +5,7 @@ public class BarGraph {
     public static void main(String[] args) {
         
         final GraphModel model = new GraphModel();
-        
+
         //create items
         GraphItem[] items = {
             new RGBItem(RGBItem.ColorName.RED, 0),

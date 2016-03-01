@@ -48,9 +48,9 @@ public final class RGBItem implements GraphItem{
 
     @Override
     public void setMaxValue(int maxValue) {
-        if(maxValue < 0)
-            this.maxValue = 0;
-        this.maxValue = maxValue;
+        /** Empty since an RGB component's max value will always be 255
+        Implement this method for other representations, like maximum population
+        of people, or maximum number of cars, etc */
     }
     
     private void setColor(){
@@ -60,11 +60,6 @@ public final class RGBItem implements GraphItem{
             color = Color.GREEN;
         else
             color = Color.BLUE;
-    }
-
-    @Override
-    public int getValuePercentage() {
-        return value / maxValue * 100;
     }
     
     public enum ColorName{
@@ -85,7 +80,7 @@ public final class RGBItem implements GraphItem{
     }
     
     private int value;
-    private int maxValue;
+    private final int maxValue;
     private final ColorName name;
     private Color color;
 }

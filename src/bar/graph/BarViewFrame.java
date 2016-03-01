@@ -2,6 +2,8 @@ package bar.graph;
 
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.util.Iterator;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -26,6 +28,30 @@ public class BarViewFrame extends JFrame{
             barPanel.add(barLabel, BorderLayout.CENTER);
             barPanel.add(new JLabel(item.toString(), SwingConstants.CENTER), BorderLayout.SOUTH);
             add(barPanel);
+            
+            MouseListener mouseListener = new
+                MouseListener(){
+
+                    @Override
+                    public void mouseClicked(MouseEvent me) {}
+
+                    @Override
+                    public void mousePressed(MouseEvent me) {
+                        System.out.println(me.getY());
+                    }
+
+                    @Override
+                    public void mouseReleased(MouseEvent me) {}
+
+                    @Override
+                    public void mouseEntered(MouseEvent me) {}
+
+                    @Override
+                    public void mouseExited(MouseEvent me) {}
+                    
+                };
+            
+            barLabel.addMouseListener(mouseListener);
             
             ChangeListener listener = new
                 ChangeListener(){

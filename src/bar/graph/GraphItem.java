@@ -7,7 +7,6 @@ public interface GraphItem {
     void setValue(int value);
     int getMaxValue();
     void setMaxValue(int maxValue);
-    int getValuePercentage();
     Color getColor();
     void setColor(Color color);
     @Override
